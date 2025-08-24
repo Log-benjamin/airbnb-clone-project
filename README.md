@@ -159,3 +159,28 @@ Securing the backend API is a top priority to protect user data, maintain platfo
 *   **Protecting User Data:** With sensitive information like names, email addresses, and booking history, strong security is essential to prevent data breaches and protect user privacy.
 *   **Securing Payments:** Financial transactions are a primary target for attackers. Implementing secure authentication and authorization ensures that only legitimate users can initiate payments and that financial data is never exposed.
 *   **Maintaining Platform Integrity:** Without proper security, malicious actors could post fake reviews, spam property listings, or disrupt the booking system. Security measures ensure that all interactions on the platform are genuine and trustworthy.
+
+
+## 🚀 CI/CD Pipeline
+To ensure a streamlined, reliable, and efficient development workflow, this project will implement a Continuous Integration and Continuous Deployment (CI/CD) pipeline.
+
+### What is CI/CD?
+
+**CI/CD** is a practice that automates the software development and release process.
+
+*   **Continuous Integration (CI):** This is the practice of frequently merging all developers' code changes into a central repository. After each merge, an automated build and test sequence is run to detect integration issues as quickly as possible.
+*   **Continuous Deployment (CD):** This practice automates the release of the successfully tested code to a production environment. This step ensures that new features and bug fixes can be delivered to users quickly and safely.
+
+### Importance for the Project
+
+Implementing a CI/CD pipeline is crucial for this project because it:
+*   **Improves Code Quality:** Automates testing on every code change, catching bugs early.
+*   **Increases Development Speed:** Reduces manual deployment tasks, allowing developers to focus on building features.
+*   **Ensures Reliable Releases:** Creates a consistent and repeatable deployment process, minimizing the risk of human error during releases.
+
+### Tools for CI/CD
+
+The following tools will be used to build and manage the pipeline:
+
+*   **GitHub Actions:** Used to automate the entire workflow, from running tests on every push to deploying the application to a server.
+*   **Docker:** Used to containerize the application, ensuring that the build, test, and deployment environments are consistent and reproducible.
