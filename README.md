@@ -135,3 +135,27 @@ This feature provides a secure and reliable way to handle financial transactions
 
 ### Review System
 The review system allows guests and hosts to leave feedback and ratings after a stay. This feature builds trust and transparency within the community, helping users make informed decisions when booking or listing a property.
+
+
+## 🛡️ API Security
+Securing the backend API is a top priority to protect user data, maintain platform integrity, and build trust. The following measures will be implemented to ensure the application is robust against common threats.
+
+### Key Security Measures
+
+1.  **Authentication:**
+    *   **Implementation:** User identity will be verified using a token-based authentication system (e.g., JWT - JSON Web Tokens). When a user logs in, they receive a secure token that must be included in the header of all subsequent requests to access protected endpoints.
+    *   **Purpose:** This ensures that only registered and logged-in users can access sensitive data or perform actions on the platform.
+
+2.  **Authorization:**
+    *   **Implementation:** Permission classes will be enforced on all API endpoints. This means that even after a user is authenticated, the system will check if they have the necessary rights to perform a specific action (e.g., a user can only edit their own profile or delete a property they own).
+    *   **Purpose:** This prevents users from accessing or modifying data that does not belong to them, which is a critical layer of defense after authentication.
+
+3.  **Rate Limiting:**
+    *   **Implementation:** The API will implement request throttling or rate limiting to restrict the number of requests a user can make within a certain timeframe.
+    *   **Purpose:** This helps protect the application from brute-force attacks (e.g., guessing passwords) and prevents denial-of-service (DoS) attacks, ensuring the API remains available for legitimate users.
+
+### Why Security is Crucial
+
+*   **Protecting User Data:** With sensitive information like names, email addresses, and booking history, strong security is essential to prevent data breaches and protect user privacy.
+*   **Securing Payments:** Financial transactions are a primary target for attackers. Implementing secure authentication and authorization ensures that only legitimate users can initiate payments and that financial data is never exposed.
+*   **Maintaining Platform Integrity:** Without proper security, malicious actors could post fake reviews, spam property listings, or disrupt the booking system. Security measures ensure that all interactions on the platform are genuine and trustworthy.
