@@ -58,3 +58,61 @@ This project leverages a modern stack of technologies to ensure scalability, per
 *   **Docker:** A containerization platform used to package the application and its dependencies into isolated containers. This ensures a consistent development, testing, and production environment, eliminating the "it works on my machine" problem.
 
 *   **CI/CD Pipelines:** Automated workflows for Continuous Integration and Continuous Deployment. These pipelines automatically build, test, and deploy code changes, ensuring high code quality and enabling rapid, reliable releases.
+
+
+## 🗂️ Database Design
+The database schema is designed around the core entities of the application. The relationships are structured to ensure data integrity and efficient querying.
+
+### Key Entities & Fields
+
+**1. Users**
+This entity stores information about registered users.
+*   `id`: Unique identifier for the user (Primary Key).
+*   `email`: User's email address, used for login and notifications.
+*   `password`: Hashed password for security.
+*   `full_name`: The user's full name.
+*   `created_at`: Timestamp of when the user account was created.
+
+**2. Properties**
+This entity contains details about the property listings.
+*   `id`: Unique identifier for the property (Primary Key).
+*   `owner_id`: Foreign key referencing the `Users` table to identify the host.
+*   `title`: The title of the property listing.
+*   `description`: A detailed description of the property.
+*   `location`: The physical address of the property.
+*   `price_per_night`: The cost to book the property for one night.
+
+**3. Bookings**
+This entity manages reservation details made by users.
+*   `id`: Unique identifier for the booking (Primary Key).
+*   `user_id`: Foreign key referencing the `Users` table to identify the guest.
+*   `property_id`: Foreign key referencing the `Properties` table.
+*   `start_date`: The check-in date for the reservation.
+*   `end_date`: The check-out date for the reservation.
+*   `total_price`: The calculated total cost of the booking.
+
+**4. Reviews**
+This entity holds user-submitted reviews and ratings for properties.
+*   `id`: Unique identifier for the review (Primary Key).
+*   `user_id`: Foreign key referencing the `Users` table to identify the reviewer.
+*   `property_id`: Foreign key referencing the `Properties` table that is being reviewed.
+*   `rating`: A numerical rating (e.g., 1 to 5).
+*   `comment`: The text content of the review.
+
+**5. Payments**
+This entity tracks payment information related to bookings.
+*   `id`: Unique identifier for the payment (Primary Key).
+*   `booking_id`: Foreign key referencing the `Bookings` table.
+*   `amount`: The total amount paid.
+*   `status`: The current status of the payment (e.g., 'pending', 'completed', 'failed').
+*   `transaction_id`: A unique identifier provided by the payment gateway.
+
+### Entity Relationships
+
+*   A **User** can own multiple **Properties** (One-to-Many).
+*   A **User** can make multiple **Bookings** (One-to-Many).
+*   A **Property** can have multiple **Bookings** (One-to-Many).
+*   A **Booking** belongs to exactly one **User** and one **Property**.
+*   A **User** can write multiple **Reviews** for different properties.
+*   A **Property** can receive multiple **Reviews** from different users.
+*   Each **Booking** is associated with one **Payment** (One-to-One).
