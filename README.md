@@ -116,3 +116,22 @@ This entity tracks payment information related to bookings.
 *   A **User** can write multiple **Reviews** for different properties.
 *   A **Property** can receive multiple **Reviews** from different users.
 *   Each **Booking** is associated with one **Payment** (One-to-One).
+
+
+## 🛠️ Feature Breakdown
+This section provides a detailed look at the core features that form the foundation of the Airbnb Clone backend.
+
+### User Management
+This feature handles all aspects of user accounts, including secure registration and authentication. It allows users to create and manage their profiles, providing a personalized and secure experience essential for a trusted rental platform.
+
+### Property Management
+This system allows hosts to list, update, and manage their properties. It includes functionalities for adding details like descriptions, photos, pricing, and availability, which are crucial for attracting potential guests.
+
+### Booking System
+The booking system is the core transactional feature, enabling users to reserve properties for specific dates. It manages the entire reservation lifecycle, from checking property availability to confirming and managing booking details.
+
+### Payment Processing
+This feature provides a secure and reliable way to handle financial transactions for bookings. It integrates a payment gateway to process payments from guests and manage payouts to hosts, ensuring all financial data is handled correctly.
+
+### Review System
+The review system allows guests and hosts to leave feedback and ratings after a stay. This feature builds trust and transparency within the community, helping users make informed decisions when booking or listing a property.
